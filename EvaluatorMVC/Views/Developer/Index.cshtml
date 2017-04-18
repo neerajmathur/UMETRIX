@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Developer Zone</h2>
+
+<div class="container  features">
+
+    <section id="lead" class="lead">
+        To add new validation cases, please download utility from below link. You can create your validation case and upload it.
+
+    </section>
+
+
+    <div style="text-align:center; font-size:x-large;">
+        <table style="width:100%"><tr><td><a class="fa fa-download btn btn-info btn-lg" href="../ValidationCaseDesigner\ValidationCaseDesigner.zip">       Download Validation Case Designer</a></td><td>
+            @Html.ActionLink("  Upload New Validation Case", "UploadValidationCase", "Developer", new { @class = "fa fa-upload btn btn-info btn-lg" })
+            </td></tr></table>
+
+
+
+        <br />
+        <br />
+
+
+        <img src="~/Images/DefineTestCase.png" />
+    </div>
+
+
+</div>
+

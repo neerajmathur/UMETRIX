@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "UploadValidationCase";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Upload New Validation Case</h2>
+
+@using (Html.BeginForm("UploadValidationCase", "Developer", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <br />
+    <input type="file" name="file" class="file" />
+    <br />
+    <input type="submit" name="Submit" id="Submit" value="Upload Validation Case" class="btn btn-primary btn-large" />
+    <br />
+}
+
+
+@if (ViewBag.FileUploadSuccess != null)
+{
+    <br />
+    <p style="padding:15px;" class="bg-success">Validation case uploaded successfully</p>
+}
+else if (ViewBag.FileUploadFailed != null)
+{ 
+
+    <br />
+    <p style="padding:15px;" class="bg-danger">Error! could not upload file</p>
+    <p>Error message: @ViewBag.ErrorMsg</p>
+
+}

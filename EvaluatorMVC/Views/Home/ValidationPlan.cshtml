@@ -1,0 +1,172 @@
+﻿@model IEnumerable<EvaluatorMVC.Models.GuidelineViewModel>
+
+@{
+    ViewBag.Title = "Validation Plan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("_Progress")
+
+<h3>Step 3: Validation Plan</h3>
+
+
+
+@using (Html.BeginForm("ExecuteTestPlan", "Home", FormMethod.Post))
+{
+    <table style="width:100%">
+        <tr>
+            <td>
+                <p>
+                    @Html.ActionLink("Add New Guideline", "AddNewGudiline", new { Guideline = 0 }, new { @class = "btn btn-success" })
+                </p>
+            </td>
+            <td>
+                <p align="right">
+                    <input type="submit" name="Submit" id="Submit1" onclick="SetIsExecutingValidationPlan();" value="Execute Validation Plan" class="btn btn-primary btn-large" />
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table class="table  table-hover">
+        <thead class="thead-inverse">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Execute)
+                </th>
+                <th>
+                    Guideline
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.CheckBoxFor(modelItem => item.Execute, new Dictionary<string, object> { { "onclick", "SetExecuteForGuideline(" + item.Id + ",this)" } })
+                    @* @Html.DisplayFor(modelItem => item.Execute)*@
+
+                </td>
+                <td>
+                    <strong>@Html.DisplayFor(modelItem => item.Name)</strong>
+                    <br />
+                    @Html.DisplayFor(modelItem => item.Description)
+                    <br />
+                    <br />
+                    Category: @Html.DisplayFor(modelItem => item.Categories)
+                    <br />
+                    Domain: @Html.DisplayFor(modelItem => item.Domain)
+                    <br />
+                    <table class="table" width="600">
+                        <thead><tr><th>Validation Cases</th><th></th></tr></thead>
+                        @if (item.TestCases.Count > 0)
+                        {
+                            foreach (var testCase in item.TestCases)
+                            {
+                                <tr><td width="60%">@Html.DisplayFor(modelItem => testCase.Name)</td><td>@Html.ActionLink("Delete", "DeleteValidationCase", new { GuidelineID = item.Id, TestCaseID = testCase.Id }, new { @class = "btn btn-danger btn-xs", onclick = "return confirm('Are you sure you wish to remove this validation case?');" })</td></tr>
+                            }
+
+                        }
+                        <tr>
+                            <td>
+                                @*@Html.ActionLink("Add new validation case", "AddNewValidationCase", new { id = item.Id })*@
+                                <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" onclick="SetGuidelineValue(@item.Id);">Add new validation case</button>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+
+                </td>
+
+                <td style="width: 150px; text-align: right;">
+                    @Html.ActionLink("Edit", "EditGuideline", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" }) |
+                    @Html.ActionLink("Delete", "DeleteGuideline", new { GuidelineID = item.Id }, new { @class = "btn btn-danger btn-xs", onclick = "return confirm('Are you sure you wish to delete this guideline?');" })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <p align="right">
+        <input type="submit" name="Submit" id="Submit2" onclick="SetIsExecutingValidationPlan();" value="Execute Validation Plan" class="btn btn-primary btn-large" />
+    </p>
+
+}
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add Validation Case</h4>
+            </div>
+            <div class="modal-body">
+
+
+                @using (Html.BeginForm("AddValidationCase", "Home", FormMethod.Post))
+                {
+                    <input type="hidden" name="GuidelineId" id="GuidelineId" />
+                    @Html.DropDownList("ValidationCase", new SelectList(ViewBag.TestCasesList))
+                    <button type="submit" value="Add">Add</button>
+                }
+            </div>
+            @*<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>*@
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(".step1").removeClass("active");
+    $(".step1").addClass("activated");
+
+    $(".step2").addClass("activated");
+
+    $(".step3").addClass("active");
+
+    $(".f1-progress-line").css("width", "75%");
+
+
+    function SetGuidelineValue(id) {
+        $("#GuidelineId").val(id);
+
+    }
+
+
+    function SetExecuteForGuideline(id, chk) {
+        $.ajax({
+            url: '@Url.Action("SetExecuteForGuideline", "Home")',
+            type: 'GET',
+            dataType: 'json',
+            // we set cache: false because GET requests are often cached by browsers
+            // IE is particularly aggressive in that respect
+            cache: false,
+            data: { id: id, value: chk.checked },
+            success: function (success) {
+                //Todo on success
+            }
+        });
+
+       
+
+    }
+
+    function SetIsExecutingValidationPlan() {
+        document.getElementById("Submit1").disabled = true;
+        document.getElementById("Submit1").value = "Executing validation plan. Please Wait...";
+        document.getElementById("Submit2").disabled = true;
+        document.getElementById("Submit2").value = "Executing validation plan. Please Wait..."
+    }
+
+</script>
+

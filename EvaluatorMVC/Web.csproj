@@ -1,0 +1,1112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BD49A545-79A4-40A0-9716-771394E3945F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EvaluatorMVC</RootNamespace>
+    <AssemblyName>EvaluatorMVC</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DeveloperController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CustomRoleProvider.cs" />
+    <Compile Include="Models\GuidelineViewModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="APKDecompile\apktool\apktool.jar" />
+    <Content Include="APKDecompile\apktool\Command.txt" />
+    <Content Include="APKDecompile\apktool\Smali2Jar.jar" />
+    <Content Include="APKDecompile\dex2jar\lib\antlr-runtime-3.5.jar" />
+    <Content Include="APKDecompile\dex2jar\lib\asm-debug-all-4.1.jar" />
+    <Content Include="APKDecompile\dex2jar\lib\d2j-base-cmd-2.0.jar" />
+    <Content Include="APKDecompile\dex2jar\lib\d2j-jasmin-2.0.jar" />
+    <Content Include="APKDecompile\dex2jar\lib\d2j-smali-2.0.jar" />
+    <Content Include="APKDecompile\dex2jar\lib\dex-ir-2.0.jar" />
+    <Content Include="APKDecompile\dex2jar\lib\dex-reader-2.0.jar" />
+    <Content Include="APKDecompile\dex2jar\lib\dex-reader-api-2.0.jar" />
+    <Content Include="APKDecompile\dex2jar\lib\dex-tools-2.0.jar" />
+    <Content Include="APKDecompile\dex2jar\lib\dex-translator-2.0.jar" />
+    <Content Include="APKDecompile\dex2jar\lib\dex-writer-2.0.jar" />
+    <Content Include="APKDecompile\dex2jar\lib\dx-1.7.jar" />
+    <Content Include="APKDecompile\jd-core\jd-core-java-1.2.jar" />
+    <Content Include="APKDecompile\jd-core\output_jar.jar" />
+    <Content Include="APKDecompile\jd-core\readme.txt" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\AnimatorRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\AnimRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\AnyRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\AnyThread.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\ArrayRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\AttrRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\BinderThread.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\BoolRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\CallSuper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\CheckResult.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\ColorInt.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\ColorRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\DimenRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\Dimension.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\DrawableRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\FloatRange.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\FractionRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\IdRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\IntDef.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\IntegerRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\InterpolatorRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\IntRange.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\Keep.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\LayoutRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\MainThread.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\MenuRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\NonNull.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\Nullable.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\PluralsRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\Px.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\RawRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\RequiresApi.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\RequiresPermission.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\Size.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\StringDef.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\StringRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\StyleableRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\StyleRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\TransitionRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\UiThread.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\VisibleForTesting.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\WorkerThread.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\annotation\XmlRes.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\compat\BuildConfig.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\coreui\BuildConfig.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\coreutils\BuildConfig.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\BuildConfig.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\internal\ForegroundLinearLayout.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\internal\NavigationMenu.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\internal\NavigationMenuItemView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\internal\NavigationMenuPresenter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\internal\NavigationMenuView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\internal\NavigationSubMenu.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\internal\ParcelableSparseArray.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\internal\ScrimInsetsFrameLayout.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\R.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\AnimationUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\AppBarLayout.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\BottomSheetBehavior.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\BottomSheetDialog.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\BottomSheetDialogFragment.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\CheckableImageButton.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\CircularBorderDrawable.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\CircularBorderDrawableLollipop.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\CollapsingTextHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\CollapsingToolbarLayout.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\CoordinatorLayout.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\DirectedAcyclicGraph.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\DrawableUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\FloatingActionButton.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\FloatingActionButtonGingerbread.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\FloatingActionButtonIcs.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\FloatingActionButtonImpl.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\FloatingActionButtonLollipop.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\HeaderBehavior.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\HeaderScrollingViewBehavior.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\MathUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\NavigationView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\ShadowDrawableWrapper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\ShadowViewDelegate.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\Snackbar.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\SnackbarManager.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\StateListAnimator.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\SwipeDismissBehavior.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\TabItem.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\TabLayout.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\TextInputEditText.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\TextInputLayout.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\ThemeUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\ValueAnimatorCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\ValueAnimatorCompatImplGingerbread.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\ValueAnimatorCompatImplHoneycombMr1.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\ViewGroupUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\ViewGroupUtilsHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\ViewOffsetBehavior.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\ViewOffsetHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\ViewUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\ViewUtilsLollipop.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\design\widget\VisibilityAwareImageButton.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\fragment\BuildConfig.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\graphics\drawable\AndroidResources.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\graphics\drawable\AnimatedVectorDrawableCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\graphics\drawable\animated\BuildConfig.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\graphics\drawable\BuildConfig.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\graphics\drawable\PathParser.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\graphics\drawable\TypedArrayUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\graphics\drawable\VectorDrawableCommon.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\graphics\drawable\VectorDrawableCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\mediacompat\BuildConfig.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\accessibilityservice\AccessibilityServiceInfoCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\accessibilityservice\AccessibilityServiceInfoCompatIcs.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\accessibilityservice\AccessibilityServiceInfoCompatJellyBean.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\accessibilityservice\AccessibilityServiceInfoCompatJellyBeanMr2.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\animation\AnimatorCompatHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\animation\AnimatorListenerCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\animation\AnimatorProvider.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\animation\AnimatorUpdateListenerCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\animation\GingerbreadAnimatorCompatProvider.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\animation\HoneycombMr1AnimatorCompatProvider.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\animation\ValueAnimatorCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ActionBarDrawerToggle.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ActionBarDrawerToggleHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ActionBarDrawerToggleJellybeanMR2.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ActivityCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ActivityCompat21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ActivityCompat22.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ActivityCompatApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ActivityCompatHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ActivityCompatJB.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ActivityManagerCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ActivityManagerCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ActivityOptionsCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ActivityOptionsCompat21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ActivityOptionsCompat23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ActivityOptionsCompat24.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ActivityOptionsCompatJB.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\AppLaunchChecker.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\AppOpsManagerCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\AppOpsManagerCompat23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\BackStackRecord.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\BackStackState.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\BaseFragmentActivityGingerbread.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\BaseFragmentActivityHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\BaseFragmentActivityJB.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\BundleCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\BundleCompatGingerbread.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\BundleCompatJellybeanMR2.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\BundleUtil.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\DialogFragment.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\Fragment.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\FragmentActivity.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\FragmentContainer.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\FragmentController.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\FragmentHostCallback.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\FragmentManager.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\FragmentManagerImpl.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\FragmentManagerNonConfig.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\FragmentManagerState.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\FragmentPagerAdapter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\FragmentState.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\FragmentStatePagerAdapter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\FragmentTabHost.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\FragmentTransaction.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\FragmentTransitionCompat21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\INotificationSideChannel.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ListFragment.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\LoaderManager.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\LoaderManagerImpl.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NavUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NavUtilsJB.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NoSaveStateFrameLayout.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationBuilderWithActions.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationBuilderWithBuilderAccessor.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationCompatApi20.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationCompatApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationCompatApi24.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationCompatBase.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationCompatExtras.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationCompatHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationCompatIceCreamSandwich.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationCompatJellybean.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationCompatSideChannelService.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationManagerCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationManagerCompatApi24.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationManagerCompatIceCreamSandwich.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\NotificationManagerCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\RemoteInput.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\RemoteInputCompatApi20.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\RemoteInputCompatBase.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\RemoteInputCompatJellybean.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ServiceCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ServiceCompatApi24.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ShareCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ShareCompatICS.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\ShareCompatJB.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\SharedElementCallback.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\SuperNotCalledException.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\TaskStackBuilder.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\TaskStackBuilderHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\app\TaskStackBuilderJellybean.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\BuildConfig.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\AsyncTaskLoader.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\ContentResolverCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\ContentResolverCompatJellybean.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\ContextCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\ContextCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\ContextCompatApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\ContextCompatApi24.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\ContextCompatHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\ContextCompatJellybean.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\ContextCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\CursorLoader.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\ExecutorCompatHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\FileProvider.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\IntentCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\IntentCompatHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\IntentCompatIcsMr1.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\Loader.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\LocalBroadcastManager.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\ModernAsyncTask.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\ParallelExecutorCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\PermissionChecker.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\pm\ActivityInfoCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\res\ConfigurationHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\res\ConfigurationHelperGingerbread.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\res\ConfigurationHelperHoneycombMr2.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\res\ConfigurationHelperJellybeanMr1.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\res\ResourcesCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\res\ResourcesCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\res\ResourcesCompatApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\res\ResourcesCompatIcsMr1.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\res\TypedArrayUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\SharedPreferencesCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\content\WakefulBroadcastReceiver.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\database\DatabaseUtilsCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\BitmapCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\BitmapCompatHoneycombMr1.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\BitmapCompatJellybeanMR2.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\BitmapCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\ColorUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\drawable\DrawableCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\drawable\DrawableCompatApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\drawable\DrawableCompatBase.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\drawable\DrawableCompatHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\drawable\DrawableCompatJellybeanMr1.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\drawable\DrawableCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\drawable\DrawableCompatLollipop.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\drawable\DrawableWrapper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\drawable\DrawableWrapperGingerbread.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\drawable\DrawableWrapperHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\drawable\DrawableWrapperKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\drawable\DrawableWrapperLollipop.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\drawable\RoundedBitmapDrawable.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\drawable\RoundedBitmapDrawable21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\drawable\RoundedBitmapDrawableFactory.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\graphics\drawable\TintAwareDrawable.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\hardware\display\DisplayManagerCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\hardware\display\DisplayManagerJellybeanMr1.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\hardware\fingerprint\FingerprintManagerCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\hardware\fingerprint\FingerprintManagerCompatApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\internal\view\SupportMenu.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\internal\view\SupportMenuItem.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\internal\view\SupportSubMenu.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\MediaBrowserCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\MediaBrowserCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\MediaBrowserCompatApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\MediaBrowserCompatApi24.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\MediaBrowserCompatUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\MediaBrowserProtocol.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\MediaBrowserServiceCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\MediaBrowserServiceCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\MediaBrowserServiceCompatApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\MediaBrowserServiceCompatApi24.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\MediaDescriptionCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\MediaDescriptionCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\MediaDescriptionCompatApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\MediaMetadataCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\MediaMetadataCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\ParceledListSliceAdapterApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\RatingCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\RatingCompatKitkat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\IMediaControllerCallback.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\IMediaSession.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\MediaButtonReceiver.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\MediaControllerCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\MediaControllerCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\MediaControllerCompatApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\MediaControllerCompatApi24.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\MediaSessionCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\MediaSessionCompatApi14.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\MediaSessionCompatApi18.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\MediaSessionCompatApi19.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\MediaSessionCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\MediaSessionCompatApi22.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\MediaSessionCompatApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\MediaSessionCompatApi24.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\ParcelableVolumeInfo.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\PlaybackStateCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\PlaybackStateCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\session\PlaybackStateCompatApi22.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\TransportController.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\TransportMediator.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\TransportMediatorCallback.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\TransportMediatorJellybeanMR2.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\TransportPerformer.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\TransportStateListener.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\VolumeProviderCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\media\VolumeProviderCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\net\ConnectivityManagerCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\net\ConnectivityManagerCompatHoneycombMR2.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\net\ConnectivityManagerCompatJellyBean.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\net\DatagramSocketWrapper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\net\TrafficStatsCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\net\TrafficStatsCompatApi24.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\net\TrafficStatsCompatIcs.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\AsyncTaskCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\AsyncTaskCompatHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\BuildCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\CancellationSignal.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\CancellationSignalCompatJellybean.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\EnvironmentCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\EnvironmentCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\IResultReceiver.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\OperationCanceledException.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\ParcelableCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\ParcelableCompatCreatorCallbacks.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\ParcelableCompatCreatorHoneycombMR2.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\ParcelableCompatCreatorHoneycombMR2Stub.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\ResultReceiver.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\TraceCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\TraceJellybeanMR2.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\UserManagerCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\os\UserManagerCompatApi24.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\print\PrintHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\print\PrintHelperApi20.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\print\PrintHelperApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\print\PrintHelperApi24.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\print\PrintHelperKitkat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\provider\DocumentFile.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\provider\DocumentsContractApi19.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\provider\DocumentsContractApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\provider\RawDocumentFile.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\provider\SingleDocumentFile.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\provider\TreeDocumentFile.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\text\BidiFormatter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\text\ICUCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\text\ICUCompatApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\text\ICUCompatIcs.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\text\TextDirectionHeuristicCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\text\TextDirectionHeuristicsCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\text\TextUtilsCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\text\TextUtilsCompatJellybeanMr1.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\text\util\LinkifyCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\util\ArrayMap.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\util\AtomicFile.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\util\CircularArray.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\util\CircularIntArray.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\util\ContainerHelpers.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\util\DebugUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\util\LogWriter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\util\LongSparseArray.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\util\LruCache.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\util\MapCollections.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\util\Pair.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\util\PatternsCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\util\Pools.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\util\SimpleArrayMap.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\util\SparseArrayCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\util\TimeUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\AbsSavedState.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\AccessibilityDelegateCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\AccessibilityDelegateCompatIcs.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\AccessibilityDelegateCompatJellyBean.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityEventCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityEventCompatIcs.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityEventCompatJellyBean.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityEventCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityManagerCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityManagerCompatIcs.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityManagerCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityNodeInfoCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityNodeInfoCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityNodeInfoCompatApi22.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityNodeInfoCompatApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityNodeInfoCompatApi24.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityNodeInfoCompatIcs.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityNodeInfoCompatJellyBean.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityNodeInfoCompatJellybeanMr1.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityNodeInfoCompatJellybeanMr2.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityNodeInfoCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityNodeProviderCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityNodeProviderCompatJellyBean.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityNodeProviderCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityRecordCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityRecordCompatIcs.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityRecordCompatIcsMr1.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityRecordCompatJellyBean.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityWindowInfoCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityWindowInfoCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\accessibility\AccessibilityWindowInfoCompatApi24.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ActionProvider.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\animation\FastOutLinearInInterpolator.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\animation\FastOutSlowInInterpolator.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\animation\LinearOutSlowInInterpolator.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\animation\LookupTableInterpolator.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\animation\PathInterpolatorCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\animation\PathInterpolatorCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\animation\PathInterpolatorCompatBase.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\animation\PathInterpolatorGingerbread.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\AsyncLayoutInflater.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\GestureDetectorCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\GravityCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\GravityCompatJellybeanMr1.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\InputDeviceCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\KeyEventCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\KeyEventCompatHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\LayoutInflaterCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\LayoutInflaterCompatBase.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\LayoutInflaterCompatHC.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\LayoutInflaterCompatLollipop.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\LayoutInflaterFactory.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\MarginLayoutParamsCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\MarginLayoutParamsCompatJellybeanMr1.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\MenuCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\MenuItemCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\MenuItemCompatHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\MenuItemCompatIcs.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\MotionEventCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\MotionEventCompatHoneycombMr1.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\MotionEventCompatICS.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\NestedScrollingChild.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\NestedScrollingChildHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\NestedScrollingParent.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\NestedScrollingParentHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\OnApplyWindowInsetsListener.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\PagerAdapter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\PagerTabStrip.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\PagerTitleStrip.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\PagerTitleStripIcs.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\PointerIconCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\PointerIconCompatApi24.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ScaleGestureDetectorCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ScaleGestureDetectorCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ScrollingView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\TintableBackgroundView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\VelocityTrackerCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\VelocityTrackerCompatHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewCompatApi24.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewCompatBase.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewCompatHC.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewCompatICS.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewCompatICSMr1.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewCompatJB.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewCompatJellybeanMr1.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewCompatJellybeanMr2.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewCompatLollipop.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewCompatMarshmallow.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewConfigurationCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewConfigurationCompatICS.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewGroupCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewGroupCompatHC.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewGroupCompatIcs.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewGroupCompatJellybeanMR2.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewGroupCompatLollipop.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewPager.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewParentCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewParentCompatICS.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewParentCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewParentCompatLollipop.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewPropertyAnimatorCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewPropertyAnimatorCompatICS.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewPropertyAnimatorCompatJB.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewPropertyAnimatorCompatJellybeanMr2.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewPropertyAnimatorCompatKK.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewPropertyAnimatorCompatLollipop.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewPropertyAnimatorListener.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewPropertyAnimatorListenerAdapter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\ViewPropertyAnimatorUpdateListener.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\WindowCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\WindowInsetsCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\WindowInsetsCompatApi20.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\view\WindowInsetsCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\AutoScrollHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\CircleImageView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\CompoundButtonCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\CompoundButtonCompatApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\CompoundButtonCompatGingerbread.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\CompoundButtonCompatLollipop.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\ContentLoadingProgressBar.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\CursorAdapter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\CursorFilter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\DrawerLayout.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\DrawerLayoutCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\DrawerLayoutImpl.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\EdgeEffectCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\EdgeEffectCompatIcs.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\EdgeEffectCompatLollipop.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\ExploreByTouchHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\FocusStrategy.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\ListPopupWindowCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\ListPopupWindowCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\ListViewAutoScrollHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\ListViewCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\ListViewCompatGingerbread.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\ListViewCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\MaterialProgressDrawable.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\NestedScrollView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\PopupMenuCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\PopupMenuCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\PopupWindowCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\PopupWindowCompatApi21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\PopupWindowCompatApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\PopupWindowCompatKitKat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\ResourceCursorAdapter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\ScrollerCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\ScrollerCompatIcs.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\SearchViewCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\SearchViewCompatHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\SearchViewCompatIcs.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\SimpleCursorAdapter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\SlidingPaneLayout.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\Space.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\SwipeProgressBar.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\SwipeRefreshLayout.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\TextViewCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\TextViewCompatApi23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\TextViewCompatGingerbread.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\TextViewCompatJb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\TextViewCompatJbMr1.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\TextViewCompatJbMr2.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\TintableCompoundButton.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v4\widget\ViewDragHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\appcompat\BuildConfig.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\appcompat\R.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\ActionBar.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\ActionBarActivity.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\ActionBarDrawerToggle.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\ActionBarDrawerToggleHoneycomb.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\AlertController.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\AlertDialog.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\AppCompatActivity.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\AppCompatCallback.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\AppCompatDelegate.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\AppCompatDelegateImplBase.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\AppCompatDelegateImplN.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\AppCompatDelegateImplV11.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\AppCompatDelegateImplV14.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\AppCompatDelegateImplV23.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\AppCompatDelegateImplV9.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\AppCompatDialog.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\AppCompatDialogFragment.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\AppCompatViewInflater.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\NavItemSelectedListener.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\NotificationCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\NotificationCompatImpl21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\NotificationCompatImplBase.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\ToolbarActionBar.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\TwilightCalculator.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\TwilightManager.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\app\WindowDecorActionBar.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\content\res\AppCompatColorStateListInflater.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\content\res\AppCompatResources.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\content\res\GrowingArrayUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\graphics\drawable\DrawableWrapper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\graphics\drawable\DrawerArrowDrawable.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\recyclerview\BuildConfig.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\recyclerview\R.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\text\AllCapsTransformationMethod.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\transition\ActionBarTransition.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\util\AsyncListUtil.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\util\BatchingListUpdateCallback.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\util\DiffUtil.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\util\ListUpdateCallback.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\util\MessageThreadUtil.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\util\SortedList.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\util\ThreadUtil.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\util\TileList.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\ActionBarPolicy.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\ActionMode.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\CollapsibleActionView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\ContextThemeWrapper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\ActionMenuItem.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\ActionMenuItemView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\BaseMenuPresenter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\BaseMenuWrapper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\BaseWrapper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\CascadingMenuPopup.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\ExpandedMenuView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\ListMenuItemView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\ListMenuPresenter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\MenuAdapter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\MenuBuilder.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\MenuDialogHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\MenuHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\MenuItemImpl.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\MenuItemWrapperICS.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\MenuItemWrapperJB.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\MenuPopup.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\MenuPopupHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\MenuPresenter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\MenuView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\MenuWrapperFactory.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\MenuWrapperICS.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\ShowableListMenu.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\StandardMenuPopup.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\SubMenuBuilder.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\menu\SubMenuWrapperICS.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\StandaloneActionMode.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\SupportActionModeWrapper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\SupportMenuInflater.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\ViewPropertyAnimatorCompatSet.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\view\WindowCallbackWrapper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AbsActionBarView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ActionBarBackgroundDrawable.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ActionBarBackgroundDrawableV21.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ActionBarContainer.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ActionBarContextView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ActionBarOverlayLayout.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ActionMenuPresenter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ActionMenuView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ActivityChooserModel.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ActivityChooserView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AdapterHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatAutoCompleteTextView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatBackgroundHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatButton.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatCheckBox.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatCheckedTextView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatCompoundButtonHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatDrawableManager.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatEditText.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatImageButton.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatImageHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatImageView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatMultiAutoCompleteTextView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatPopupWindow.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatProgressBarHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatRadioButton.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatRatingBar.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatSeekBar.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatSeekBarHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatSpinner.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatTextHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatTextHelperV17.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\AppCompatTextView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ButtonBarLayout.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ChildHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ContentFrameLayout.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\DecorContentParent.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\DecorToolbar.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\DefaultItemAnimator.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\DialogTitle.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\DrawableUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\DropDownListView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\FitWindowsFrameLayout.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\FitWindowsLinearLayout.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\FitWindowsViewGroup.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ForwardingListener.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\GridLayoutManager.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\helper\ItemTouchHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\helper\ItemTouchUIUtil.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\helper\ItemTouchUIUtilImpl.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\LayoutState.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\LinearLayoutCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\LinearLayoutManager.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\LinearSmoothScroller.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\LinearSnapHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ListPopupWindow.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ListViewCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\MenuItemHoverListener.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\MenuPopupWindow.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\OpReorderer.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\OrientationHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\PopupMenu.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\PositionMap.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\RecyclerView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\RecyclerViewAccessibilityDelegate.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ResourcesWrapper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\RtlSpacingHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ScrollbarHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ScrollingTabContainerView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\SearchView.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ShareActionProvider.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\SimpleItemAnimator.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\SnapHelper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\StaggeredGridLayoutManager.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\SuggestionsAdapter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\SwitchCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ThemedSpinnerAdapter.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ThemeUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\TintContextWrapper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\TintInfo.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\TintResources.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\TintTypedArray.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\Toolbar.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ToolbarWidgetWrapper.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\util\SortedListAdapterCallback.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\VectorEnabledTintResources.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ViewInfoStore.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ViewStubCompat.java" />
+    <Content Include="APKDecompile\jd-core\sample\android\support\v7\widget\ViewUtils.java" />
+    <Content Include="APKDecompile\jd-core\sample\com\neemathu\myapplication\BuildConfig.java" />
+    <Content Include="APKDecompile\jd-core\sample\com\neemathu\myapplication\MainActivity.java" />
+    <Content Include="APKDecompile\jd-core\sample\com\neemathu\myapplication\R.java" />
+    <Content Include="App_Data\aspnet-EvaluatorMVC-20170225105212.mdf" />
+    <Content Include="App_Data\aspnet-EvaluatorMVC-20170225105212_log.ldf">
+      <DependentUpon>aspnet-EvaluatorMVC-20170225105212.mdf</DependentUpon>
+    </Content>
+    <Content Include="assets\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="assets\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="assets\bootstrap\css\bootstrap.css" />
+    <Content Include="assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\bootstrap\js\bootstrap.js" />
+    <Content Include="assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\bootstrap\js\npm.js" />
+    <Content Include="assets\css\form-elements.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\font-awesome\css\font-awesome.css" />
+    <Content Include="assets\font-awesome\css\font-awesome.min.css" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="assets\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="assets\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="assets\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="assets\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="assets\ico\favicon.png" />
+    <Content Include="assets\img\backgrounds\1%402x.jpg" />
+    <Content Include="assets\img\backgrounds\1.jpg" />
+    <Content Include="assets\img\logo%402x.png" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\js\jquery-1.11.1.js" />
+    <Content Include="assets\js\jquery-1.11.1.min.js" />
+    <Content Include="assets\js\jquery.backstretch.js" />
+    <Content Include="assets\js\jquery.backstretch.min.js" />
+    <Content Include="assets\js\placeholder.js" />
+    <Content Include="assets\js\retina-1.1.0.js" />
+    <Content Include="assets\js\retina-1.1.0.min.js" />
+    <Content Include="assets\js\scripts.js" />
+    <Content Include="Content\bootstrap-select.min.css" />
+    <Content Include="Content\bootstrap-select.min.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\DefineTestCase.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="assets\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="assets\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="assets\bootstrap\css\bootstrap.css.map" />
+    <Content Include="assets\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="assets\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="assets\font-awesome\less\animated.less" />
+    <Content Include="assets\font-awesome\less\bordered-pulled.less" />
+    <Content Include="assets\font-awesome\less\core.less" />
+    <Content Include="assets\font-awesome\less\fixed-width.less" />
+    <Content Include="assets\font-awesome\less\font-awesome.less" />
+    <Content Include="assets\font-awesome\less\icons.less" />
+    <Content Include="assets\font-awesome\less\larger.less" />
+    <Content Include="assets\font-awesome\less\list.less" />
+    <Content Include="assets\font-awesome\less\mixins.less" />
+    <Content Include="assets\font-awesome\less\path.less" />
+    <Content Include="assets\font-awesome\less\rotated-flipped.less" />
+    <Content Include="assets\font-awesome\less\screen-reader.less" />
+    <Content Include="assets\font-awesome\less\stacked.less" />
+    <Content Include="assets\font-awesome\less\variables.less" />
+    <Content Include="assets\font-awesome\scss\font-awesome.scss" />
+    <Content Include="assets\font-awesome\scss\_animated.scss" />
+    <Content Include="assets\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="assets\font-awesome\scss\_core.scss" />
+    <Content Include="assets\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="assets\font-awesome\scss\_icons.scss" />
+    <Content Include="assets\font-awesome\scss\_larger.scss" />
+    <Content Include="assets\font-awesome\scss\_list.scss" />
+    <Content Include="assets\font-awesome\scss\_mixins.scss" />
+    <Content Include="assets\font-awesome\scss\_path.scss" />
+    <Content Include="assets\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="assets\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="assets\font-awesome\scss\_stacked.scss" />
+    <Content Include="assets\font-awesome\scss\_variables.scss" />
+    <Content Include="APKDecompile\apktool\apktool.bat" />
+    <Content Include="APKDecompile\dex2jar\d2j-baksmali.bat" />
+    <Content Include="APKDecompile\dex2jar\d2j-baksmali.sh" />
+    <Content Include="APKDecompile\dex2jar\d2j-dex-recompute-checksum.bat" />
+    <Content Include="APKDecompile\dex2jar\d2j-dex-recompute-checksum.sh" />
+    <Content Include="APKDecompile\dex2jar\d2j-dex2jar.bat" />
+    <Content Include="APKDecompile\dex2jar\d2j-dex2jar.sh" />
+    <Content Include="APKDecompile\dex2jar\d2j-dex2smali.bat" />
+    <Content Include="APKDecompile\dex2jar\d2j-dex2smali.sh" />
+    <Content Include="APKDecompile\dex2jar\d2j-jar2dex.bat" />
+    <Content Include="APKDecompile\dex2jar\d2j-jar2dex.sh" />
+    <Content Include="APKDecompile\dex2jar\d2j-jar2jasmin.bat" />
+    <Content Include="APKDecompile\dex2jar\d2j-jar2jasmin.sh" />
+    <Content Include="APKDecompile\dex2jar\d2j-jasmin2jar.bat" />
+    <Content Include="APKDecompile\dex2jar\d2j-jasmin2jar.sh" />
+    <Content Include="APKDecompile\dex2jar\d2j-smali.bat" />
+    <Content Include="APKDecompile\dex2jar\d2j-smali.sh" />
+    <Content Include="APKDecompile\dex2jar\d2j-std-apk.bat" />
+    <Content Include="APKDecompile\dex2jar\d2j-std-apk.sh" />
+    <Content Include="APKDecompile\dex2jar\d2j_invoke.bat" />
+    <Content Include="APKDecompile\dex2jar\d2j_invoke.sh" />
+    <Content Include="App_Data\TestPlan.json" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\UploadAPKFile.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Progress.cshtml" />
+    <Content Include="Views\Home\ValidationPlan.cshtml" />
+    <Content Include="Views\Home\AddNewGudiline.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\SelectCriteria.cshtml" />
+    <Content Include="Views\Home\Results.cshtml" />
+    <Content Include="Views\Home\EditGuideline.cshtml" />
+    <Content Include="Views\Developer\Index.cshtml" />
+    <Content Include="Views\Developer\UploadValidationCase.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="APKDecompile\apkcode\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ActivityLibrary\ActivityLibrary.csproj">
+      <Project>{53700d4b-b6a0-42bd-b1fe-47b2bb521e27}</Project>
+      <Name>ActivityLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1377</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1237/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

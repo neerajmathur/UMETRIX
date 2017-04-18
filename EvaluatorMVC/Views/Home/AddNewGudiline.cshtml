@@ -1,0 +1,86 @@
+﻿@model EvaluatorMVC.Models.GuidelineViewModel
+
+@{
+    ViewBag.Title = "AddNewGuideline";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("_Progress")
+
+<h3>Add New Guideline</h3>
+
+@using (Html.BeginForm("CreateNewGuideline", "Home", FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Name, new { @class = "input-xlarge", type = "text", required = "required" })
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Description, new { @class = "input-xlarge", type = "text", required = "required" })
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Categories, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Categories, new { @class = "input-xlarge", type = "text", required = "required" })
+                @Html.ValidationMessageFor(model => model.Categories)
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Domain, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Domain, new { @class = "input-xlarge", type = "text", required = "required" })
+                @Html.ValidationMessageFor(model => model.Domain)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Execute, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(model => model.Execute, new {  type = "checkbox", required = "required" })
+                @Html.ValidationMessageFor(model => model.Execute)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to view guidelines", "ValidationPlan")
+</div>
+
+
+<script type="text/javascript">
+
+    $(".step1").removeClass("active");
+    $(".step1").addClass("activated");
+
+    $(".step2").addClass("activated");
+
+    $(".step3").addClass("active");
+
+    $(".f1-progress-line").css("width", "75%");
+
+
+</script>

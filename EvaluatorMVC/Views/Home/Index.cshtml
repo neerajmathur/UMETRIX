@@ -1,0 +1,168 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .features .fa {
+        font-size: 28px;
+    }
+
+    .btn-outline-inverse:hover {
+        color: #fff;
+        border-color: #428BCA;
+        background-color: #428BCA;
+    }
+
+
+    .btn-outline-inverse {
+        color: #428BCA;
+        background-color: transparent;
+        border-color: #428BCA;
+        padding: 15px 30px;
+        font-size: 20px;
+        transition: all .1s ease-in-out;
+    }
+
+    .half-rule {
+        width: 100px;
+        margin: 40px auto;
+    }
+
+
+    .f1-step.active .f1-step-icon {
+        width: 35px;
+        height: 35px;
+        margin-top: 0;
+        background: #f35b3f;
+        font-size: 20px;
+        line-height: 35px;
+    }
+
+
+    .f1-step p {
+        font-size: 15px;
+       
+    }
+
+    .f1-steps {
+        text-align: center;
+        width: 75%;
+        margin: auto;
+    } 
+
+</style>
+
+<div class="jumbotron" style="text-align:center">
+
+    <h2>UMETRIX</h2>
+    <p >Usability Evaluation for Android Apps based on Usability Code Pattern Analysis </p>
+    <br/>
+   <p>Four simple steps to test your App</p>
+
+  
+        <div class="f1-steps">
+            <div class="f1-progress">
+                <div class="f1-progress-line" data-now-value="25" data-number-of-steps="4" style="width: 100%;"></div>
+            </div>
+            <div class="f1-step activated step1 ">
+                <div class="f1-step-icon"><i class="fa fa-android "></i></div> @*fa-upload*@
+                <p>Upload APK</p>
+            </div>
+            <div class="f1-step activated step2">
+                <div class="f1-step-icon"><i class="fa fa-search"></i></div>
+                <p>Tell Us About Your App</p>
+            </div>
+            <div class="f1-step activated step3">
+                <div class="f1-step-icon"><i class="fa fa-th-list"></i></div>
+                <p>Review Validation Plan</p>
+            </div>
+            <div class="f1-step activated step4">
+                <div class="f1-step-icon"><i class="fa fa-bar-chart"></i></div>
+                <p>Results</p>
+            </div>
+        </div>
+
+
+        <br />
+
+        @using (Html.BeginForm("UploadAPKFile", "Home", FormMethod.Post))
+        {
+            <p align="center">
+                <input type="submit" name="Submit" id="Submit" value="Test Your Android App" class="btn btn-outline-inverse btn-lg" />
+            </p>
+        }
+
+
+    </div>
+
+<div class="container text-center features">
+
+    <section id="lead" class="lead">
+        UMETRIX to identify usability issues specic to mobile apps. This framework uses usability guidelines associated with usability code patterns in mobile apps to improve usability.
+    </section>
+
+    <hr class="half-rule">
+
+    <div class="s2-docs-featurette">
+        <div class="row">
+            <div class="col-sm-4">
+                <i class="fa fa-plug"></i>
+                <h4>Fully extensible</h4>
+                <p>
+                    You can add new guideline and create your own custom validation cases.
+                </p>
+            </div>
+            @*<div class="col-sm-4">
+                <i class="fa fa-language"></i>
+                <h4>In your language</h4>
+                <p>
+                    Select2 comes with support for
+                    <a href="examples.html#rtl">RTL environments</a>,
+                    <a href="examples.html#diacritics">searching with diacritics</a> and
+                    <a href="examples.html#language">over 40 languages</a> built-in.
+                </p>
+            </div>*@
+            <div class="col-sm-4">
+                <i class="fa fa-database"></i>
+                <h4>Data support</h4>
+                <p>
+                    We save your evaluation results for future comparision purpose
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <i class="fa fa-paint-brush"></i>
+                <h4>Fits in with your theme</h4>
+                <p>
+                    Fully skinnable, CSS built with Sass and an
+                    @*<a href="https://github.com/select2/select2-bootstrap-theme">optional theme for Bootstrap 3</a>.*@
+                </p>
+            </div>
+        </div>
+        @*<div class="row">
+            <div class="col-sm-4">
+                <i class="fa fa-plug"></i>
+                <h4>Fully extensible</h4>
+                <p>
+                    You can add new guideline and create your own custom validation cases.
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <i class="fa fa-tag"></i>
+                <h4>Dynamic item creation</h4>
+                <p>
+                    Allow users to type in a new option and
+                    <a href="examples.html#tags">add it on the fly</a>.
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <i class="fa fa-html5"></i>
+                <h4>Full browser support</h4>
+                <p>Support for both modern and legacy browsers is built-in, even including Internet Explorer 8.</p>
+            </div>
+        </div>*@
+    </div>
+
+
+</div>
