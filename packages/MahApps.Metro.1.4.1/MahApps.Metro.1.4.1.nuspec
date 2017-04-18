@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>MahApps.Metro</id>
+    <version>1.4.1</version>
+    <title>MahApps.Metro</title>
+    <authors>Jan Karger, Dennis Daume, Brendan Forster, Paul Jenkins, Jake Ginnivan, Alex Mitchell</authors>
+    <owners>Jan Karger, Dennis Daume, Brendan Forster, Paul Jenkins, Jake Ginnivan, Alex Mitchell</owners>
+    <licenseUrl>https://github.com/MahApps/MahApps.Metro/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/MahApps/MahApps.Metro</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/MahApps/MahApps.Metro/master/mahapps.metro.logo2.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The goal of MahApps.Metro is to allow devs to quickly and easily cobble together a "Metro" or "Modern UI" for their WPF4+ apps, with minimal effort.</description>
+    <summary>The goal of MahApps.Metro is to allow devs to quickly and easily cobble together a "Metro" or "Modern UI" for their WPF4+ apps, with minimal effort.</summary>
+    <releaseNotes>https://github.com/MahApps/MahApps.Metro/releases/tag/1.4.1</releaseNotes>
+    <tags>WPF UI Metro Modern Material XAML Toolkit Library .NET</tags>
+  </metadata>
+</package>
