@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>RestSharp.Newtonsoft.Json</id>
+    <version>1.0.0</version>
+    <title>RestSharp.Newtonsoft.Json</title>
+    <authors>Adam Fisher</authors>
+    <owners>Adam Fisher</owners>
+    <licenseUrl>https://github.com/adamfisher/RestSharp.Newtonsoft.Json/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/adamfisher/RestSharp.Newtonsoft.Json</projectUrl>
+    <iconUrl>http://i.imgur.com/cWzbPUk.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Restores Newtonsoft.JSON as the default serializer for RestSharp.</description>
+    <summary />
+    <copyright>Copyright 2016</copyright>
+    <language>en-US</language>
+    <tags>REST HTTP API JSON XML NEWTONSOFT RESTSHARP</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="8.0.2" />
+      <dependency id="RestSharp" version="105.2.3" />
+    </dependencies>
+  </metadata>
+</package>
