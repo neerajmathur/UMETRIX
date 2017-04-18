@@ -1,0 +1,1 @@
+java -jar jd-core-java-1.2.jar output_jar.jar sample

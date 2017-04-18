@@ -1,0 +1,40 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="Activity Builder"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:a="clr-namespace:ActivityLibrary;assembly=ActivityLibrary"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:s1="clr-namespace:System;assembly=System"
+ xmlns:s2="clr-namespace:System;assembly=System.Core"
+ xmlns:s3="clr-namespace:System;assembly=System.ServiceModel"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System.Core"
+ xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System"
+ xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Results" Type="OutArgument(scg:Dictionary(x:String, scg:IList(x:String)))" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>526,491</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Sequence DisplayName="CheckFacebookLogin" sap:VirtualizedContainerService.HintSize="486,451">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <a:ClearResults sap:VirtualizedContainerService.HintSize="464,22" />
+    <a:ReadLayoutAttribute AttributesToRead="android:id" sap:VirtualizedContainerService.HintSize="464,22" Result="[Results]" XPath="//ScrollView" />
+    <If Condition="[Results.Count&gt;0]" sap:VirtualizedContainerService.HintSize="464,203">
+      <If.Then>
+        <a:WriteResponse sap:VirtualizedContainerService.HintSize="200,22" IsPassed="False" ResponseText="We have found ScrollView in your App, To avoid pagination you should not use ScrollView" />
+      </If.Then>
+      <If.Else>
+        <a:WriteResponse sap:VirtualizedContainerService.HintSize="200,22" IsPassed="True" ResponseText="We did not found any ScrollView" />
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

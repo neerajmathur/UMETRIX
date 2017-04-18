@@ -1,0 +1,61 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="Activity Builder"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:a="clr-namespace:ActivityLibrary;assembly=ActivityLibrary"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:s1="clr-namespace:System;assembly=System"
+ xmlns:s2="clr-namespace:System;assembly=System.Core"
+ xmlns:s3="clr-namespace:System;assembly=System.ServiceModel"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System.Core"
+ xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System"
+ xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="PasswordTextBoxList2" Type="OutArgument(scg:Dictionary(x:String, scg:IList(x:String)))" />
+    <x:Property Name="SearchBoxList" Type="OutArgument(scg:Dictionary(x:String, scg:IList(x:String)))" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>781,699</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Sequence DisplayName="Show Hide password field" sap:VirtualizedContainerService.HintSize="741,659">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <a:ClearResults sap:VirtualizedContainerService.HintSize="719,22" />
+    <a:ReadMenuAttribute AttributesToRead="app:showAsAction" sap:VirtualizedContainerService.HintSize="719,22" Result="[SearchBoxList]" XPath="//item[@app:actionViewClass='android.support.v7.widget.SearchView']" />
+    <If Condition="[SearchBoxList.Count&gt;0]" sap:VirtualizedContainerService.HintSize="719,411">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <ForEach x:TypeArguments="scg:IList(x:String)" sap:VirtualizedContainerService.HintSize="494,308" Values="[SearchBoxList.Values]">
+          <ActivityAction x:TypeArguments="scg:IList(x:String)">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="scg:IList(x:String)" Name="item" />
+            </ActivityAction.Argument>
+            <If Condition="[item.Contains(&quot;app:showAsAction|always&quot;)]" sap:VirtualizedContainerService.HintSize="464,203">
+              <If.Then>
+                <a:WriteResponse sap:VirtualizedContainerService.HintSize="200,22" IsPassed="True" ResponseText="Search box is present on top of the menu" />
+              </If.Then>
+              <If.Else>
+                <a:WriteResponse sap:VirtualizedContainerService.HintSize="200,22" IsPassed="False" ResponseText="Search Box is not present on top of the menu" />
+              </If.Else>
+            </If>
+          </ActivityAction>
+        </ForEach>
+      </If.Then>
+      <If.Else>
+        <a:WriteResponse sap:VirtualizedContainerService.HintSize="200,22" IsPassed="True" ResponseText="Not Applicable" />
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
