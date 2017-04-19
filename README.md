@@ -1,6 +1,6 @@
-# README #
+# UMETRIX #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+UMETRIX to identify usability issues specific to mobile apps. This framework uses usability guidelines associated with usability code patterns in mobile apps to improve usability.
 
 ### What is this repository for? ###
 
