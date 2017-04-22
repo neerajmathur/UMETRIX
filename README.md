@@ -6,3 +6,9 @@ UMETRIX to identify usability issues specific to mobile apps. This framework use
 
 ## UMETRIX - Web Evaluator ##
 ![alt tag](https://raw.githubusercontent.com/neerajmathur/UMETRIX/master/ScreenShots/TestAndroidApp.png)
+
+## Validation Case Designer ##
+![alt tag](https://raw.githubusercontent.com/neerajmathur/UMETRIX/master/ScreenShots/DefineTestCase.png)
+
+## Test Case Results ##
+![alt tag](https://raw.githubusercontent.com/neerajmathur/UMETRIX/master/ScreenShots/TestResults.png)
