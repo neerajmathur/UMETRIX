@@ -64,6 +64,7 @@
     <Compile Include="ClearResults.cs" />
     <Compile Include="GetControlIntIds.cs" />
     <Compile Include="GetIntIDList.cs" />
+    <Compile Include="Lucene\LuceneCodeSnippetService.cs" />
     <Compile Include="Lucene\LuceneService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadLayoutAttribute.cs" />

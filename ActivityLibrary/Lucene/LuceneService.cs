@@ -18,7 +18,7 @@ namespace ActivityLibrary
         private static Analyzer analyzer = new StandardAnalyzer();
         private static Directory luceneIndexDirectory;
         private static IndexWriter writer;
-        private static string indexPath = @"c:\temp\LuceneIndex";
+        //private static string indexPath = @"c:\temp\LuceneIndex";
 
          static LuceneService()
         {
@@ -27,6 +27,8 @@ namespace ActivityLibrary
 
          public static void InitialiseLucene()
         {
+            var indexPath = AppDomain.CurrentDomain.BaseDirectory + @"\APKDecompile\LuceneIndex";
+
             if (System.IO.Directory.Exists(indexPath))
             {
                 try
@@ -93,6 +95,7 @@ namespace ActivityLibrary
             return results;
 
         }
+        
         private static List<String> DirSearch(string sDir)
         {
             
