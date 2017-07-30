@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace EvaluatorMVC.Controllers
+namespace UmetrixWeb.Controllers
 {
     public class DeveloperController : Controller
     {

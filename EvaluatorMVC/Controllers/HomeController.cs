@@ -1,4 +1,4 @@
-﻿using EvaluatorMVC.Models;
+﻿using UmetrixWeb.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -7,11 +7,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace EvaluatorMVC.Controllers
+namespace UmetrixWeb.Controllers
 {
     [Authorize]
     public class HomeController : Controller
     {
+
+        public static string ResultsInPrintFormat;
+        public static string AppName ="Vlab";
+        public static string ApkFileName = "Vlab.apk";
+
         [AllowAnonymous]
         public ActionResult Index()
         {
@@ -47,7 +52,6 @@ namespace EvaluatorMVC.Controllers
                 foreach (var cat in categories)
                 {
                     categoriesList.Add(cat.Trim());
-                    
                 }
 
                 foreach (var domain in domains)
@@ -59,9 +63,6 @@ namespace EvaluatorMVC.Controllers
             ViewBag.CatgoryList = categoriesList.ToList();
             ViewBag.DomainList = domainList.ToList();
 
-
-
-
             return View();
         }
 
@@ -69,16 +70,15 @@ namespace EvaluatorMVC.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
             return View();
         }
 
 
         public ActionResult ValidationPlan()
         {
+            AppName = Request["AppName"];
             var Model = GetGuidelines();
             ViewBag.TestCasesList = GetTestCaseList();
-
 
             return View("ValidationPlan",Model);
         }
@@ -140,6 +140,7 @@ namespace EvaluatorMVC.Controllers
 
             if (file != null && file.ContentLength > 0)
             {
+                ApkFileName = file.FileName;
                 try
                 {
                     System.IO.Directory.Delete(Path.Combine(Server.MapPath("~/APKDecompile/"), "apkcode"), true);
@@ -150,13 +151,14 @@ namespace EvaluatorMVC.Controllers
                 var path = Path.Combine(Server.MapPath("~/APKDecompile/"), "app-debug.apk");
                 file.SaveAs(path);
 
+                //System.Threading.Thread.Sleep(5000);
 
                 //string strCmdText;
                 //var strFile = Path.Combine(Server.MapPath("~/APKDecompile/"), "DecompileAPK.exe");
                 //code for apk decompile
 
                 //1. Decompile apk file from apktool
-                string basePath = @"D:\E\";//AppDomain.CurrentDomain.BaseDirectory;
+                string basePath = System.Configuration.ConfigurationManager.AppSettings["DecompilerPath"]; //@"D:\E\";//AppDomain.CurrentDomain.BaseDirectory;
                 //1. Decompile apk file from apktool
                 string strCmdText;
                 strCmdText = "/c java -jar \"" + basePath + "apktool\\apktool.jar\" d \"" + basePath + "app-debug.apk\" -s  -o \"" + basePath + "apkcode\"";
@@ -267,72 +269,160 @@ namespace EvaluatorMVC.Controllers
         [HttpPost]
         public ActionResult ExecuteTestPlan(IEnumerable<GuidelineViewModel> data)
         {
-            ActivityLibrary.LuceneService.InitialiseLucene();
-            ActivityLibrary.LuceneService.BuildIndex();
+            try
+            {
+                ActivityLibrary.LuceneService.InitialiseLucene();
+                ActivityLibrary.LuceneService.BuildIndex();
 
-            //string searchText = "setOnClickListener(new View.OnClickListener() \n" + "public void onClick(View paramAnonymousView)";
+                int TotalPassed = 0;
+                int TotalFailed = 0;
 
-            //var responseData = ActivityLibrary.LuceneService.Search(searchText);
+                //string searchText = "setOnClickListener(new View.OnClickListener() \n" + "public void onClick(View paramAnonymousView)";
 
-            var guildeines = GetGuidelines();
-            ActivityLibrary.Results.Clear();
-            var resultHTMLResponse = "";
-            int i = 1;
+                //var responseData = ActivityLibrary.LuceneService.Search(searchText);
 
-         string _results =
-        @"<p>
+                var guidelines = GetGuidelines();
+                ActivityLibrary.Results.Clear();
+                var resultHTMLResponse = "";
+                ResultsInPrintFormat = "";
+                int i = 1;
+
+                string _results =
+               @"<p>
 	            <span style='font-size: 11pt;'><span style='color: #008080;'><strong>Guideline# {9}:  </strong></span>{0}</span><br />
 	            <span style='font-size: 9pt;'><span style='color: #008080;'><strong>Usability Category:</strong></span> {1}</span><br />
 	            <span style='color: #808080; font-size: 9pt;'>{2}</span><br /><br /><span style='color: #ff0000;'><strong>{3}</strong> Failed Matches</span> | <span style='color: #339966;'>{4} Success Matches</span> | Success Rate {5} % |
 	            <span style='text-decoration: underline;'><span style='color: #0000ff; text-decoration: underline;'><a href='javascript:void(0)' onclick='toggelDetailedResults(""detailedResults{6}"")'>View Results</a></span></span>
+                <span style='text-decoration: underline;'><span style='color: #0000ff; text-decoration: underline;'><a href='javascript:void(0)' onclick='toggelDetailedResults(""codeSnippet{6}"")'>View Code Snippets</a></span></span>
                     <div id='detailedResults{7}' style='display:none;'>
                         {8}
+                    </div>
+                    <div id='codeSnippet{7}' style='display:none;align=left'>
+                        <pre class='prettyprint'>
+                             {10}
+                        </pre>
                     </div>
                 </p>
 
             <hr />";
 
-             foreach (var guildeine in guildeines)
-             {
-                 int passed = 0;
-                 int failed = 0;
-                 double passedRate = 0;
+                string _results_print =
+           @"<p>
+	            <span style='font-size: 11pt;'><span style='color: #008080;'><strong>Guideline# {8}:  </strong></span>{0}</span><br />
+	            <span style='font-size: 9pt;'><span style='color: #008080;'><strong>Usability Category:</strong></span> {1}</span><br />
+	            <span style='color: #808080; font-size: 9pt;'>{2}</span><br /><br /><span style='color: #ff0000;'><strong>{3}</strong> Failed Matches</span> | <span style='color: #339966;'>{4} Success Matches</span> | Success Rate {5} % |
+	            <span style='text-decoration: underline;'><span style='color: #0000ff; text-decoration: underline;'></span></span>
+                    <div id='detailedResults{6}' >
+                        {7}
+                    </div>
+                </p>
 
-                 var testResultsPassed = "";
-                 var testResultsFailed = "";
-                 //execute each test case inside the test plan
-                 foreach (var testcase in guildeine.TestCases)
-                 {
-                     System.Activities.Activity workflow = System.Activities.XamlIntegration.ActivityXamlServices.Load(Path.Combine(Server.MapPath("~/App_Data/TestCases/"), testcase.Name));
-                     var result = System.Activities.WorkflowInvoker.Invoke(workflow);
-                     var results = ActivityLibrary.Results.Get();
+            <hr />";
 
-                     foreach (var res in results)
-                     {
-                         passed = res.IsPassed ? passed + 1 : passed;
-                         failed = res.IsPassed ? failed : failed + 1;
+                string output = "";
 
-                         if (res.IsPassed)
-                             testResultsPassed += "<li> <span style='color: #339966; font-size: 11pt;'>Passed : " + res.ResponseStr + " </span> </li>";
-                         else
-                             testResultsFailed += "<li> <span style='color: #ff0000; font-size: 11pt;'> Failed : " + res.ResponseStr + " </span> </li>";
-                     }
-                 }
+                foreach (var guideline in guidelines)
+                {
+                    if (guideline.Execute)
+                    {
+                        int passed = 0;
+                        int failed = 0;
+                        double passedRate = 0;
 
-                 passedRate = (Convert.ToDouble(passed) / Convert.ToDouble(passed + failed)) * 100;
+                        var testResultsPassed = "";
+                        var testResultsFailed = "";
+                        //execute each test case inside the test plan
+                        foreach (var testcase in guideline.TestCases)
+                        {
+                            System.Activities.Activity workflow = System.Activities.XamlIntegration.ActivityXamlServices.Load(Path.Combine(Server.MapPath("~/App_Data/TestCases/"), testcase.Name));
+                            var result = System.Activities.WorkflowInvoker.Invoke(workflow);
+                            var results = ActivityLibrary.Results.Get();
 
-                 resultHTMLResponse += String.Format(_results, guildeine.Name, guildeine.Categories, guildeine.Description, failed, passed, passedRate.ToString("##.##"), i, i, "<ul>" + testResultsFailed + testResultsPassed + "</ul>", i);
-                 i++;
-             }
+                            foreach (var res in results)
+                            {
+                                passed = res.IsPassed ? passed + 1 : passed;
+                                failed = res.IsPassed ? failed : failed + 1;
 
 
-            //System.Activities.Activity workflow = System.Activities.XamlIntegration.ActivityXamlServices.Load(Path.Combine(Server.MapPath("~/App_Data/TestCases/"), "CheckFaceBookLogin.xaml"));
-            //var result = System.Activities.WorkflowInvoker.Invoke(workflow);
-            //var results = ActivityLibrary.Results.Get();
 
-            ViewBag.Results = resultHTMLResponse;
+                                if (res.IsPassed)
+                                    testResultsPassed += "<li> <span style='color: #339966; font-size: 11pt;'>Passed : " + res.ResponseStr + " </span> </li>";
+                                else
+                                    testResultsFailed += "<li> <span style='color: #ff0000; font-size: 11pt;'> Failed : " + res.ResponseStr + " </span> </li>";
+                            }
+                        }
 
+                        TotalPassed += passed;
+                        TotalFailed += failed;
+
+                        if (passed > 0)
+                            output += passed + "P";
+
+                        if (failed > 0)
+                            output += failed + "F";
+
+                        output += ",";
+
+                       var CodeSnippet = GetCodeSnippetRecomendations(guideline);
+
+
+                        passedRate = (Convert.ToDouble(passed) / Convert.ToDouble(passed + failed)) * 100;
+                        string passedRateStr = passedRate > 0 ? passedRate.ToString("##.##") : passedRate.ToString();
+                        resultHTMLResponse += String.Format(_results, guideline.Name, guideline.Categories, guideline.Description, failed, passed, passedRateStr, i, i, "<ul>" + testResultsFailed + testResultsPassed + "</ul>", i, CodeSnippet);
+                        ResultsInPrintFormat += String.Format(_results_print, guideline.Name, guideline.Categories, guideline.Description, failed, passed, passedRateStr, i, "<ul>" + testResultsFailed + testResultsPassed + "</ul>", i);
+                        i++;
+                    }
+                }
+
+                output += TotalPassed.ToString() + "," + TotalFailed.ToString();
+
+
+                
+
+                resultHTMLResponse = string.Format("<h3>Total Passed: {0} , Total Failed: {1} , Success Rate: {2:N2}%</h3>", TotalPassed, TotalFailed, (Convert.ToDouble(TotalPassed) / (TotalPassed + TotalFailed) * 100)) + resultHTMLResponse;
+                ResultsInPrintFormat = " <br/>" + string.Format("<h3>Total Passed: {0} , Total Failed: {1} , Success Rate: {2:N2}%</h3>", TotalPassed, TotalFailed, (Convert.ToDouble(TotalPassed) / (TotalPassed + TotalFailed) * 100)) + ResultsInPrintFormat;
+
+
+                //System.Activities.Activity workflow = System.Activities.XamlIntegration.ActivityXamlServices.Load(Path.Combine(Server.MapPath("~/App_Data/TestCases/"), "CheckFaceBookLogin.xaml"));
+                //var result = System.Activities.WorkflowInvoker.Invoke(workflow);
+                //var results = ActivityLibrary.Results.Get();
+
+                ViewBag.Results = resultHTMLResponse;
+            }
+            catch(Exception e)
+            {
+                ViewBag.Results = e.Message + "<br/>" + e.StackTrace;
+
+            }
             return View("Results");
+        }
+
+        private static string GetCodeSnippetRecomendations(GuidelineViewModel guideline)
+        {
+            var codeSnippets = ActivityLibrary.Lucene.LuceneCodeSnippetService.Query(guideline.Name);
+            var codeSnippet=string.Empty;
+
+            codeSnippet += "<strong>Download Android Studio Live Templates from Umetrix Github Repo <a target='_blank' href='https://github.com/neerajmathur/UMETRIX/tree/master/Live%20Templates' >Click to Download</a></strong><br/><br/>";
+
+            if (codeSnippets.Count == 0)
+                codeSnippet += "Sorry, No code snippet recommentations were found in code snippet repository";
+
+            foreach (var snippet in codeSnippets)
+            {
+                codeSnippet += "<br/>Live Template Name: " + snippet.Key;
+                codeSnippet += "<br/>Snippet: <br/>" + HttpUtility.HtmlEncode(snippet.Value);
+                codeSnippet += "<hr/>";
+            }
+            return codeSnippet;
+       }
+
+        [HttpGet]
+        public ActionResult PrintReport()
+        {
+            ViewBag.ApkFileName = ApkFileName;
+            ViewBag.AppName = AppName;
+            ViewBag.Results = ResultsInPrintFormat;
+            return View("ResultsInPrintFormat");
         }
 
 
