@@ -4,8 +4,6 @@ A collection usability Live Templates of Android studio for Android development.
 
 [![license](https://img.shields.io/github/license/digitalpebble/storm-crawler.svg?maxAge=2592000?style=plastic)](http://www.apache.org/licenses/LICENSE-2.0)
 
-[![Build Status](https://travis-ci.org/DigitalPebble/storm-crawler.svg?branch=master)](https://travis-ci.org/DigitalPebble/storm-crawler)
-
 ### UMETRIX.xml
 
 - **`uem_show_hide_password`**: "User can select to reveal or hide password as they type, during signup or sign-in"
