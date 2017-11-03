@@ -29,8 +29,9 @@ NOTE: if change link path from “D:\U” and do change it in web.config file as
 ```
 7.	Open IIS and Create Website as shown in following figure
 
+[![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/neerajmathur/UMETRIX/master/Installer/screenshots/IIS.png)]
 
-//TODO Add Images
+[![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/neerajmathur/UMETRIX/master/Installer/screenshots/Add_Website.png)]
 
 8.	Open IE and try to browse site http://localhost:8080 
 9.	Validation Case generator is present in D:\Umetrix_Binaries\ValidationCaseGenerator\ValidationCaseGenerator.exe
