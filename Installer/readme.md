@@ -1,11 +1,11 @@
-## Pre-Requisites:## 
+## Pre-Requisites ## 
 1.	Windows 7 or higher 
 2.	.Net Framework 4.6.1 or higher
 3.	IIS 7.5
 4.	SQL Server
 5.	Java  (Used to Decompile APK File)
 
-## Deployment Process:## 
+## Deployment Process ## 
 1.	Download Umetrix_Binaries.7z
 2.	Unzip Umetrix_Binaries.7z and copy it to D drive
 3.	Grant Read,Write,Execute permission to “Everyone”  for  “D:\Umetrix_Binaries\Web\APKDecompile” and “D:\Umetrix_Binaries\Web\App_Data” folders
