@@ -6,18 +6,18 @@ Pre-Requisites:
 5.	Java  (Used to Decompile APK File)
 
 Deployment Process:
-1.	Download Umetrix.zip
-2.	Unzip Umetrix.zip and copy it to D drive
-3.	Grant Read,Write,Execute permission to “Everyone”  for  “D:\Umetrix\Web\APKDecompile” and “D:\Umetrix\Web\App_Data” folders
+1.	Download Umetrix_Binaries.7z
+2.	Unzip Umetrix_Binaries.7z and copy it to D drive
+3.	Grant Read,Write,Execute permission to “Everyone”  for  “D:\Umetrix_Binaries\Web\APKDecompile” and “D:\Umetrix_Binaries\Web\App_Data” folders
 4.	Create Junction for decompilation requirement
 D:\>mklink /j D:\U "<PathWhereUmetrixWebIsCopied>\APKDecompile"
 Example:
-D:\>mklink /j D:\U "D:\Umetrix\Web\APKDecompile"
+D:\>mklink /j D:\U "D:\Umetrix_Binaries\Web\APKDecompile"
 NOTE: if change link path from “D:\U” and do change it in web.config file as well
   <appSettings>
     <add key="DecompilerPath" value="D:\U\" />
   </appSettings>
-5.	Execute SQL script present in Umetrix\DB_Bakup\UMETRIX_DB_Script.sql to create database.
+5.	Execute SQL script present in Umetrix\DB_Script\UMETRIX_DB_Script.sql to create database.
 6.	Modify database connection string in web.config to connect to restored DB backup
 <connectionStrings>
     <add name="DefaultConnection" connectionString="Data Source=localhost;Initial Catalog=Umetrix;User Id=sa; Password=ppm;"
@@ -29,6 +29,6 @@ NOTE: if change link path from “D:\U” and do change it in web.config file as
 //TODO Add Images
 
 8.	Open IE and try to browse site http://localhost:8080 
-9.	Validation Case generator is present in D:\Umetrix\ ValidationCaseGenerator \ValidationCaseGenerator.exe
+9.	Validation Case generator is present in D:\Umetrix_Binaries\ValidationCaseGenerator\ValidationCaseGenerator.exe
 
 
