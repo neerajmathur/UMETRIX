@@ -20,3 +20,6 @@ UMETRIX to identify usability issues specific to mobile apps. This framework use
 
 ## Test Case Results ##
 ![alt tag](https://raw.githubusercontent.com/neerajmathur/UMETRIX/master/ScreenShots/TestResults.png)
+
+## Installation Guide ##
+Please visit https://github.com/neerajmathur/UMETRIX/tree/master/Installer
