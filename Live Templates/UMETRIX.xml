@@ -1,17 +1,94 @@
 <templateSet group="UMETRIX">
+  
+    <!-- Existing templates -->
+  
   <template name="uem_show_hide_password" value="&lt;android.support.design.widget.TextInputLayout&#10;android:id=&quot;@+id/input_layout_password&quot;&#10;android:layout_width=&quot;wrap_content&quot;&#10;android:layout_height=&quot;wrap_content&quot;&gt;&#10;&#10;&lt;EditText&#10;android:layout_width=&quot;wrap_content&quot;&#10;android:layout_height=&quot;wrap_content&quot;&#10;android:ems=&quot;20&quot;&#10;android:layout_marginTop=&quot;@dimen/fab_margin&quot;&#10;android:id=&quot;@+id/txtPassword&quot;&#10;android:inputType=&quot;textPassword&quot;&#10;android:hint=&quot;Password&quot;/&gt;&#10;        &#10;&lt;/android.support.design.widget.TextInputLayout&gt;" description="User can select to reveal or hide password as they type, during signup or sign-in" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="XML_TEXT" value="true" />
     </context>
   </template>
-  <template name="uem_guest_account" value="SharedPreferences sharedpreferences = getSharedPreferences(&quot;MyPrefrence&quot;, MODE_PRIVATE); //where MyPREFERENCES may be any name&#10;SharedPreferences.Editor editor = sharedpreferences.edit();&#10;editor.putString(&quot;&quot;, &quot;&quot;);  //here we can use many fields&#10;editor.commit();" description="If app requests sign-up, the user can choose to continue as a guest (the user is in control)" toReformat="false" toShortenFQNames="true">
+
+  <template name="uem_guest_account" value="SharedPreferences sharedpreferences = getSharedPreferences(&quot;MyPrefrence&quot;, MODE_PRIVATE); //where MyPREFERENCES may be any name&#10;SharedPreferences.Editor editor = sharedpreferences.edit();&#10;editor.putString(&quot;&quot;, &quot;&quot;);  //here we can use many fields&#10;editor.commit();"
+       description="If app requests sign-up, the user can choose to continue as a guest (the user is in control)"
+       toReformat="false"
+       toShortenFQNames="true">
     <context>
       <option name="JAVA_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="uem_add_search_icon" value="&lt;item android:id=&quot;@+id/search&quot;&#10;        android:title=&quot;search_title&quot;&#10;        android:icon=&quot;@drawable/ic_menu_search&quot;&#10;        android:showAsAction=&quot;collapseActionView|ifRoom&quot;&#10;        android:actionViewClass=&quot;android.widget.SearchView&quot; /&gt;" description="If the search tool is inside the navigation menu, place it at the very top of that menu" toReformat="false" toShortenFQNames="true">
+
+  <template name="uem_add_search_icon" value="&lt;item android:id=&quot;@+id/search&quot;&#10;        android:title=&quot;search_title&quot;&#10;        android:icon=&quot;@drawable/ic_menu_search&quot;&#10;        android:showAsAction=&quot;collapseActionView|ifRoom&quot;&#10;        android:actionViewClass=&quot;android.widget.SearchView&quot; /&gt;"
+      description="If the search tool is inside the navigation menu, place it at the very top of that menu" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="XML_TEXT" value="true" />
     </context>
   </template>
+
+  <!-- New templates -->
+  
+  <template name="uem_barcode_scanner" value="&lt;item android:id=&quot;@+id/activity_bs&quot;&#10; android:layout_width=&quot;match_parent&quot;&#10; android:layout_height=&quot;match_parent&quot;&#10; android:paddingBottom=&quot;@dimen/activity_vertical_margin&quot;&#10; android:paddingLeft=&quot;@dimen/activity_horizontal_margin&quot;&#10; android:paddingRight=&quot;@dimen/activity_horizontal_margin&quot;&#10; android:paddingTop=&quot;@dimen/activity_vertical_margin&quot; /&gt;&#10;
+      &lt;Button android:id=&quot;@+id/scan_button&quot;&#10; android:layout_width=&#10;wrap_content&quot;&#10; android:layout_height=&quot;wrap_content&quot;&#10; android:layout_centerHorizontal=&quot;true&quot;&#10; android:text=&quot;@string/scan&quot;/ &gt;&#10; &lt;TextView android:id=&quot;@+id/scan_format&quot;&#10; android:layout_width=&quot;wrap_content&quot;&#10; android:layout_height=&quot;wrap_content&quot;&#10;
+      android:textIsSelectable=&quot;true&quot; android:layout_centerHorizontal=&quot;true&quot; android:layout_below=&quot;@id/scan_button&quot; / &gt;&#10; &lt;TextView android:id=&quot;@+id/scan_content&quot;&#10; android:layout_width=&quot;wrap_content&quot;&#10; android:layout_height=&quot;wrap_content&quot;&#10; android:textIsSelectable=&quot;true&quot; android:layout_centerHorizontal=&quot;true&quot; android:layout_below=&quot;@id/scan_format&quot;/&gt;"
+       description="Use the camera to fill in information where possible."
+       toReformat="false"
+       toShortenFQNames="true">
+    <context>
+         <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  
+  <template name="uem_date_time_picker" value="&lt;item android:id=&quot;@+id/activity_date_time_picker&quot;&#10; &lt;DatePicker android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:id=&quot;@+id/datePicker&quot; /&gt;
+    &lt;TimePicker android:layout_width=&quot;match_parent&quot;&#10; android:layout_height=&quot;wrap_content&quot; android:id=&quot;@+id/timePicker3&quot; /&gt;"
+    description="Pick a specific date and time"
+    toReformat="false"
+    toShortenFQNames="true">
+ <context>
+      <option name="XML_TEXT" value="true" />
+ </context>
+ </template>
+  
+ <template name="uem_gps_finder" value="&lt; item android:id=&quot;@+id/activity_gpsfinder&quot;&#10; android:layout_width=&quot;match_parent&quot;&#10; android:layout_height=&quot;match_parent&quot;&#10; android:paddingBottom=&quot;@dimen/activity_vertical_margin&quot;&#10; android:paddingLeft=&quot;@dimen/activity_horizontal_margin&quot;&#10; android:paddingRight=&quot;@dimen/activity_horizontal_margin&quot;&#10; android:paddingTop=&quot;@dimen/activity_vertical_margin&quot;&#10;
+&lt;Button android:id=&quot;@+id/btnShowLocation&quot;&#10; android:layout_width=&quot;wrap_content&quot;&#10; android:layout_height=&quot;wrap_content&quot;&#10; android:layout_centerHorizontal=&quot;true&quot;&#10; android:text=&quot;show Location&quot; /&gt;"
+description="Use GPS information to detect location automatically and allow the use of current location."
+toReformat="false"
+toShortenFQNames="true">
+ <context>
+   <option name="XML_TEXT" value="true" />
+ </context>
+</template>
+  
+<template name="uem_voice_recognition" value="&lt; item android:id=&quot;@+id/activity_voice_recognition&quot;&#10; android:layout_width=&quot;match_parent&quot;&#10; android:layout_height=&quot;match_parent&quot;&#10; android:paddingBottom=&quot;@dimen/activity_vertical_margin&quot;&#10; android:paddingLeft=&quot;@dimen/activity_horizontal_margin&quot;&#10; android:paddingRight=&quot;@dimen/activity_horizontal_margin&quot;&#10; android:paddingTop=&quot;@dimen/activity_vertical_margin&quot;&#10;
+&lt;TextView android:id=&quot;@+id/txtSpeechInput&quot;&#10; android:layout_width=&quot;wrap_content&quot;&#10; android:layout_height=&quot;wrap_content&quot;&#10; android:layout_alignParentTop=&quot;true&quot;&#10; android:layout_centerHorizontal=&quot;true&quot;&#10; android:layout_marginTop=&quot;100dp&quot;&#10; android:textColor=&quot;@color/white&quot;&#10; android:textSize=&quot;26dp&quot;&#10; / &gt;&#10;
+&lt;LinearLayout android:layout_width=&quot;wrap_content&quot;&#10; android:layout_height=&quot;wrap_content&#10; android:layout_alignParentBottom=&quot;true&quot; android:layout_centerHorizontal=&quot;true&quot; android:layout_marginBottom=&quot;60dp&quot; android:gravity=&quot;center&quot; android:orientation=&quot;vertical&quot; &gt;&lt;ImageButton android:id=&quot;@+id/btnSpeak&quot;&#10; android:layout_width=&quot;100dp&quot;&#10; android:layout_height=&quot;95dp&quot;
+android:src=&quot;@drawable/ic_keyboard_voice_black_24dp&quot;&#10;/&gt;&lt;TextView android:layout_width=&quot;wrap_content&quot;&#10; android:layout_height=&quot;wrap_content&quot;&#10; android:layout_marginTop=&quot;10dp&quot;&#10; android:text=&quot;@string/tap_on_mic&quot;&#10; android:textColor=&quot;@color/white&quot;&#10; android:textSize=&quot;15dp&quot;&#10;/ &gt;&#10;&lt;/LinearLayout&gt;"
+description="Use voice recognition to help users input information."
+toReformat="false"
+toShortenFQNames="true">
+ <context>
+   <option name="XML_TEXT" value="true" />
+ </context>
+</template>
+  
+<template name="uem_pinch_zoom" value="&lt; item android:id=&quot;@+id/activity_pinch_zoom&quot;&#10;android:layout_width=&quot;match_parent&quot;&#10;android:layout_height=&quot;match_parent&quot;android:paddingBottom=&quot;@dimen/activity_vertical_margin&quot;&#10;android:paddingLeft=&quot;@dimen/activity_horizontal_margin&quot;&#10;android:paddingRight=&quot;@dimen/activity_horizontal_margin&quot;&#10;android:paddingTop=&quot;@dimen/activity_vertical_margin&quot;&#10;
+    &lt;TextView  android:id=&quot;@+id/pinchTitleText&quot;&#10;android:layout_width=&quot;wrap_content&quot;&#10;   android:layout_height=&quot;wrap_content&quot;&#10;   android:text=&quot;@string/pinch_title&quot; /&gt;&#10;
+    &lt;ImageView android:id=&quot;@+id/imageView&quot;&#10;  android:layout_width=&quot;300dp&quot;&#10;   android:layout_height=&quot;300dp&quot;&#10;  android:layout_below=&quot;@+id/pinchTitleText&quot;&#10;  android:scaleType=&quot;matrix&quot;&#10; android:src=&quot;@drawable/zoom&quot;&#10;   android:maxHeight=&quot;100dp&quot;&#10;   android:maxWidth=&quot;50dp&quot; /&gt;&#10;"
+    description="Product images can be easily zoomed into"
+    toReformat="false"
+    toShortenFQNames="true">
+     <context>
+       <option name="XML_TEXT" value="true" />
+     </context>
+</template>
+  
+<!-- Template to share data from an app via mail. Similarly whatsapp, facebook etc can be implemented -->
+<template name="uem_share_product" value="Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+String aEmailList[] = {&quot;user@host.com&quot;};&#10;String aEmailCCList[] = { &quot;user2@host.com&quot;};&#10;String aEmailBCCList[] = { &quot;user3@host.com&quot; };&#10;emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, aEmailList);&#10;
+emailIntent.putExtra(android.content.Intent.EXTRA_CC, aEmailCCList);&#10;emailIntent.putExtra(android.content.Intent.EXTRA_BCC, aEmailBCCList);&#10;emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, &quot; Sample Subject&quot;);&#10;emailIntent.setType(&quot;plain/text&quot;);&#10;emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, &quot;Sample Message Body&quot;);&#10;&#10;startActivity(emailIntent);&#10;"
+description="Product can be easily shared (e.g. via email, G+,Facebook, Twitter, LinkedIn)"
+toReformat="false"
+toShortenFQNames="true">
+  <context>
+     <option name="JAVA_EXPRESSION" value="true" />
+  </context>
+</template>
 </templateSet>
