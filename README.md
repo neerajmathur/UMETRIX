@@ -6,6 +6,8 @@ UMETRIX to identify usability issues specific to mobile apps. This framework use
 
 [![license](https://img.shields.io/github/license/digitalpebble/storm-crawler.svg?maxAge=2592000?style=plastic)](http://www.apache.org/licenses/LICENSE-2.0)
 
+[![Build Status](https://neerajmathur.visualstudio.com/Umetrix/_apis/build/status/Umetrix-ASP.NET-CI?branchName=master)](https://neerajmathur.visualstudio.com/Umetrix/_build/latest?definitionId=3&branchName=master)
+
 ## UMETRIX - Introduction Video ##
 [![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/neerajmathur/UMETRIX/master/ScreenShots/UmetrixIntroduction_1.png)](https://www.youtube.com/watch?v=Y_1Gq6NbFhs)
 
