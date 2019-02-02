@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace EvaluatorMVC.Models
+namespace UmetrixWeb.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

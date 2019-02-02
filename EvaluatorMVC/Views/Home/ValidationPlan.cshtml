@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EvaluatorMVC.Models.GuidelineViewModel>
+﻿@model IEnumerable<UmetrixWeb.Models.GuidelineViewModel>
 
 @{
     ViewBag.Title = "Validation Plan";
@@ -162,10 +162,11 @@
     }
 
     function SetIsExecutingValidationPlan() {
-        document.getElementById("Submit1").disabled = true;
+        //document.getElementById("Submit1").disabled = true;
         document.getElementById("Submit1").value = "Executing validation plan. Please Wait...";
-        document.getElementById("Submit2").disabled = true;
+        //document.getElementById("Submit2").disabled = true;
         document.getElementById("Submit2").value = "Executing validation plan. Please Wait..."
+		//document.forms[0].submit();
     }
 
 </script>

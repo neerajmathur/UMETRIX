@@ -2,3 +2,12 @@ EvaluatorMVC/APKDecompile/apkcode/*
 EvaluatorMVC/APKDecompile/apkcode/
 HostingApplication/bin/Debug/APKDecompile/apkcode/
 HostingApplication/bin/Debug/APKDecompile/apkcode/*
+HostingApplication/bin/*
+HostingApplication/obj/*
+Published/*
+EvaluatorMVC/obj/*
+EvaluatorMVC/bin/*
+ActivityLibrary/obj/*
+ActivityLibrary/bin/*
+/.vs
+/ExtraFile

@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EvaluatorMVC</RootNamespace>
-    <AssemblyName>EvaluatorMVC</AssemblyName>
+    <RootNamespace>UmetrixWeb</RootNamespace>
+    <AssemblyName>UmetrixWeb</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,6 +31,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -1010,6 +1014,7 @@
     <Content Include="APKDecompile\dex2jar\d2j_invoke.bat" />
     <Content Include="APKDecompile\dex2jar\d2j_invoke.sh" />
     <Content Include="App_Data\TestPlan.json" />
+    <None Include="Properties\PublishProfiles\UmetrixWeb.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1058,6 +1063,7 @@
     <Content Include="Views\Home\EditGuideline.cshtml" />
     <Content Include="Views\Developer\Index.cshtml" />
     <Content Include="Views\Developer\UploadValidationCase.cshtml" />
+    <Content Include="Views\Home\ResultsInPrintFormat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="APKDecompile\apkcode\" />

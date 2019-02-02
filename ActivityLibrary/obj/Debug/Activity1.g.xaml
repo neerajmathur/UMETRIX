@@ -35,6 +35,6 @@
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <a:Activity1.Implementation>
-    <Sequence sads:DebugSymbol.Symbol="9xAKkPiz1ZxUgv79WgapB5Cva0Q6XFBlcnNvbmFsXEUgQm9va3NcSGlnaGVyIEVkdWNhdGlvblxtYXN0ZXJzX3Jlc2VhcmNoX2lpaXRcVXNhYmlsaXR5XFVNRVRSSVhcQWN0aXZpdHlMaWJyYXJ5XEFjdGl2aXR5MS54YW1sAS0DLW8CAQE=" />
+    <Sequence sads:DebugSymbol.Symbol="9xAKkPiz1ZxUgv79WgapB5CvUkQ6XFBlcnNvbmFsXG1hc3RlcnNfcmVzZWFyY2hfaWlpdFxVc2FiaWxpdHlcVU1FVFJJWFxBY3Rpdml0eUxpYnJhcnlcQWN0aXZpdHkxLnhhbWwBLQMtbwIBAQ==" />
   </a:Activity1.Implementation>
 </a:Activity1>

@@ -14,8 +14,8 @@
                 <!-- Accent and AppTheme setting -->
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
-                
-                <ResourceDictionary  Source="/HostingApplication;component/Resources/ScrollViewerStyle.xaml" />
+
+                <ResourceDictionary  Source="/ValidationCaseGenerator;component/Resources/ScrollViewerStyle.xaml" />
                 <!--<ResourceDictionary Source="/HostingApplication;component/Resources/DataGridStyle.xaml" />-->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

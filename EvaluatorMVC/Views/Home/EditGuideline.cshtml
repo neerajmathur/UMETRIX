@@ -1,4 +1,4 @@
-﻿@model EvaluatorMVC.Models.GuidelineViewModel
+﻿@model UmetrixWeb.Models.GuidelineViewModel
 
 @{
     ViewBag.Title = "EditGuideline";
@@ -11,7 +11,7 @@
 
 @using (Html.BeginForm("EditGuidelineData", "Home", FormMethod.Post))
 {
-    @Html.AntiForgeryToken()
+    @*@Html.AntiForgeryToken()*@
     
     <div class="form-horizontal">
         <h4>GuidelineViewModel</h4>

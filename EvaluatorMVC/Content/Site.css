@@ -3,6 +3,11 @@
     padding-bottom: 20px;
 }
 
+.input-large {
+
+    width:620px;
+}
+
 .input-xlarge {
 
     width:700px;

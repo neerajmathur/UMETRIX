@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(EvaluatorMVC.Startup))]
-namespace EvaluatorMVC
+[assembly: OwinStartupAttribute(typeof(UmetrixWeb.Startup))]
+namespace UmetrixWeb
 {
     public partial class Startup
     {

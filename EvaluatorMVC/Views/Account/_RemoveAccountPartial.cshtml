@@ -14,7 +14,7 @@
                         {
                             using (Html.BeginForm("Disassociate", "Account"))
                             {
-                            @Html.AntiForgeryToken()
+                            @*@Html.AntiForgeryToken()*@
                             <div>
                                 @Html.Hidden("loginProvider", account.LoginProvider)
                                 @Html.Hidden("providerKey", account.ProviderKey)

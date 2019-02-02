@@ -13,3 +13,10 @@ D:\Personal\E_Books\Higher_Education\masters_research_iiit\Usability\UMETRIX\Dec
 D:\Personal\E_Books\Higher_Education\masters_research_iiit\Usability\UMETRIX\EvaluatorMVC\APKDecompile\DecompileAPK.exe
 D:\Personal\E_Books\Higher_Education\masters_research_iiit\Usability\UMETRIX\EvaluatorMVC\APKDecompile\DecompileAPK.pdb
 D:\Personal\E_Books\Higher_Education\masters_research_iiit\Usability\UMETRIX\DecompileAPK\obj\Debug\DecompileAPK.csprojResolveAssemblyReference.cache
+D:\Personal\masters_research_iiit\Usability\UMETRIX\EvaluatorMVC\APKDecompile\DecompileAPK.exe.config
+D:\Personal\masters_research_iiit\Usability\UMETRIX\EvaluatorMVC\APKDecompile\DecompileAPK.exe
+D:\Personal\masters_research_iiit\Usability\UMETRIX\EvaluatorMVC\APKDecompile\DecompileAPK.pdb
+D:\Personal\masters_research_iiit\Usability\UMETRIX\DecompileAPK\obj\Debug\DecompileAPK.exe
+D:\Personal\masters_research_iiit\Usability\UMETRIX\DecompileAPK\obj\Debug\DecompileAPK.pdb
+D:\Personal\masters_research_iiit\Usability\UMETRIX\DecompileAPK\obj\Debug\DecompileAPK.csprojAssemblyReference.cache
+D:\Personal\masters_research_iiit\Usability\UMETRIX\DecompileAPK\obj\Debug\DecompileAPK.csproj.CoreCompileInputs.cache

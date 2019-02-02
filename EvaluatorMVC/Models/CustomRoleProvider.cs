@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 
-namespace EvaluatorMVC.Models
+namespace UmetrixWeb.Models
 {
     public class CustomRoleProvider : RoleProvider
     {

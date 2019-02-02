@@ -291,7 +291,7 @@ namespace UmetrixWeb.Controllers
                @"<p>
 	            <span style='font-size: 11pt;'><span style='color: #008080;'><strong>Guideline# {9}:  </strong></span>{0}</span><br />
 	            <span style='font-size: 9pt;'><span style='color: #008080;'><strong>Usability Category:</strong></span> {1}</span><br />
-	            <span style='color: #808080; font-size: 9pt;'>{2}</span><br /><br /><span style='color: #ff0000;'><strong>{3}</strong> Failed Matches</span> | <span style='color: #339966;'>{4} Success Matches</span> | Success Rate {5} % |
+	            <span style='color: #808080; font-size: 9pt;'>{2}</span><br /><br /><span style='color: #ff0000;'><strong>{3}</strong> Violated </span> | <span style='color: #339966;'>{4} Success Matches</span> | Success Rate {5} % |
 	            <span style='text-decoration: underline;'><span style='color: #0000ff; text-decoration: underline;'><a href='javascript:void(0)' onclick='toggelDetailedResults(""detailedResults{6}"")'>View Results</a></span></span>
                 <span style='text-decoration: underline;'><span style='color: #0000ff; text-decoration: underline;'><a href='javascript:void(0)' onclick='toggelDetailedResults(""codeSnippet{6}"")'>View Code Snippets</a></span></span>
                     <div id='detailedResults{7}' style='display:none;'>
@@ -310,7 +310,7 @@ namespace UmetrixWeb.Controllers
            @"<p>
 	            <span style='font-size: 11pt;'><span style='color: #008080;'><strong>Guideline# {8}:  </strong></span>{0}</span><br />
 	            <span style='font-size: 9pt;'><span style='color: #008080;'><strong>Usability Category:</strong></span> {1}</span><br />
-	            <span style='color: #808080; font-size: 9pt;'>{2}</span><br /><br /><span style='color: #ff0000;'><strong>{3}</strong> Failed Matches</span> | <span style='color: #339966;'>{4} Success Matches</span> | Success Rate {5} % |
+	            <span style='color: #808080; font-size: 9pt;'>{2}</span><br /><br /><span style='color: #ff0000;'><strong>{3}</strong> Violated </span> | <span style='color: #339966;'>{4} Success Matches</span> | Success Rate {5} % |
 	            <span style='text-decoration: underline;'><span style='color: #0000ff; text-decoration: underline;'></span></span>
                     <div id='detailedResults{6}' >
                         {7}
@@ -348,7 +348,7 @@ namespace UmetrixWeb.Controllers
                                 if (res.IsPassed)
                                     testResultsPassed += "<li> <span style='color: #339966; font-size: 11pt;'>Passed : " + res.ResponseStr + " </span> </li>";
                                 else
-                                    testResultsFailed += "<li> <span style='color: #ff0000; font-size: 11pt;'> Failed : " + res.ResponseStr + " </span> </li>";
+                                    testResultsFailed += "<li> <span style='color: #ff0000; font-size: 11pt;'> Violated : " + res.ResponseStr + " </span> </li>";
                             }
                         }
 
@@ -379,8 +379,8 @@ namespace UmetrixWeb.Controllers
 
                 
 
-                resultHTMLResponse = string.Format("<h3>Total Passed: {0} , Total Failed: {1} , Success Rate: {2:N2}%</h3>", TotalPassed, TotalFailed, (Convert.ToDouble(TotalPassed) / (TotalPassed + TotalFailed) * 100)) + resultHTMLResponse;
-                ResultsInPrintFormat = " <br/>" + string.Format("<h3>Total Passed: {0} , Total Failed: {1} , Success Rate: {2:N2}%</h3>", TotalPassed, TotalFailed, (Convert.ToDouble(TotalPassed) / (TotalPassed + TotalFailed) * 100)) + ResultsInPrintFormat;
+                resultHTMLResponse = string.Format("<h3>Total Matched: {0} , Total Violated: {1} , Conformance Rate: {2:N2}%</h3>", TotalPassed, TotalFailed, (Convert.ToDouble(TotalPassed) / (TotalPassed + TotalFailed) * 100)) + resultHTMLResponse;
+                ResultsInPrintFormat = " <br/>" + string.Format("<h3>Total Matched: {0} , Total Violated: {1} , Conformance Rate: {2:N2}%</h3>", TotalPassed, TotalFailed, (Convert.ToDouble(TotalPassed) / (TotalPassed + TotalFailed) * 100)) + ResultsInPrintFormat;
 
 
                 //System.Activities.Activity workflow = System.Activities.XamlIntegration.ActivityXamlServices.Load(Path.Combine(Server.MapPath("~/App_Data/TestCases/"), "CheckFaceBookLogin.xaml"));

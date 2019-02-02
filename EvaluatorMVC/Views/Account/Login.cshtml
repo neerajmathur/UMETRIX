@@ -1,4 +1,4 @@
-﻿@model EvaluatorMVC.Models.LoginViewModel
+﻿@model UmetrixWeb.Models.LoginViewModel
 
 @{
     ViewBag.Title = "Log in";
@@ -10,7 +10,7 @@
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
-                @Html.AntiForgeryToken()
+                @*@Html.AntiForgeryToken()*@
                 <h4>Use a local account to log in.</h4>
                 <hr />
                 @Html.ValidationSummary(true)
@@ -49,7 +49,7 @@
     </div>
     <div class="col-md-4">
         <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new { Action = "ExternalLogin", ReturnUrl = ViewBag.ReturnUrl })
+            @*@Html.Partial("_ExternalLoginsListPartial", new { Action = "ExternalLogin", ReturnUrl = ViewBag.ReturnUrl })*@
         </section>
     </div>
 </div>

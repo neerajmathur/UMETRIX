@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Results";
+    Layout = ""; 
+}
+<h1>@ViewBag.AppName</h1>
+        
+
+<h3>Usability results for @Html.Raw(ViewBag.ApkFileName)</h3>
+
+@Html.Raw(ViewBag.Results)

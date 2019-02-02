@@ -1,9 +1,10 @@
 ﻿
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="/Content/bootstrap-select.min.css">
-
+@*<link rel="stylesheet" href="http://localhost/umetrix/Content/bootstrap-select.min.css">*@
+@Styles.Render("~/Content/bootstrap-select.min.css")
 <!-- Latest compiled and minified JavaScript -->
-<script src="/Content/bootstrap-select.min.js"></script>
+@*<script src="http://localhost/umetrix/Content/bootstrap-select.min.js"></script>*@
+@Scripts.Render("~/Content/bootstrap-select.min.js")
 
 <style >
 
@@ -24,36 +25,37 @@
 
 @using (Html.BeginForm("ValidationPlan", "Home", FormMethod.Post))
 {
-<div class="form-box">
+    <div class="form-box">
 
-    <div class="form-group">
-       Select which category your App belongs to:
-        <br/>
-        @Html.ListBox("category", new SelectList(ViewBag.CatgoryList), new { @class = "selectpicker" })
+        <div class="form-group">
+            Specify your Android APP Name:
+            <br/>
+            @Html.TextBox("AppName", "" ,new { @class = "input-large", type = "text", required = "required" })
+        </div>
+
+        <div class="form-group">
+            Select which category your App belongs to:
+            <br />
+            @Html.ListBox("category", new SelectList(ViewBag.CatgoryList), new { @class = "selectpicker" })
+        </div>
+
+
+        <div class="form-group">
+            Select which domain your App belongs to:
+            <br />
+            @Html.ListBox("domain", new SelectList(ViewBag.DomainList), new { @class = "selectpicker" })
+
+            @*<select id="domain" name="domain" class="selectpicker" multiple>
+                    <option>Input</option>
+                    <option>Registration</option>
+                    <option>Login</option>
+                </select>*@
+        </div>
     </div>
-
-
-    <div class="form-group">
-        Select which domain your App belongs to:
-        <br />
-        @Html.ListBox("domain", new SelectList(ViewBag.DomainList), new { @class = "selectpicker" })
-
-        @*<select id="domain" name="domain" class="selectpicker" multiple>
-            <option>Input</option>
-            <option>Registration</option>
-            <option>Login</option>
-        </select>*@
-    </div>
-
-</div>
-
-
    
         <p align="right">
             <input type="submit" name="Submit" id="Submit" value="Next" class="btn btn-primary btn-large" />
         </p>
-
-
 
     }
 

@@ -44,3 +44,24 @@ D:\Personal\E_Books\Higher_Education\masters_research_iiit\Usability\UMETRIX\Act
 D:\Personal\E Books\Higher Education\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\bin\Debug\Lucene.Net.dll
 D:\Personal\E Books\Higher Education\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\bin\Debug\Lucene.Net.pdb
 D:\Personal\E Books\Higher Education\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\bin\Debug\Lucene.Net.xml
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\bin\Debug\ActivityLibrary.dll
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\bin\Debug\ActivityLibrary.pdb
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\bin\Debug\Lucene.Net.dll
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\bin\Debug\System.Windows.Interactivity.dll
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\bin\Debug\Lucene.Net.pdb
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\bin\Debug\Lucene.Net.xml
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\obj\Debug\ActivityLibrary.csprojResolveAssemblyReference.cache
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\obj\Debug\Activity1.g.xaml
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\obj\Debug\ActivityLibrary_Activity1_BeforeInitializeComponentHelper.txt
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\obj\Debug\_ActivityLibrary.g.cs
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\obj\Debug\Activity1.g.cs
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\obj\Debug\ActivityLibrary_Activity1_BeforeInitializeComponentHelper.cs
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\obj\Debug\ActivityLibrary.csproj.XamlGeneratedCodeFileListAbsolute.txt
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\obj\Debug\ActivityLibrary.csproj.XamlGeneratedXamlFileListAbsolute.txt
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\obj\Debug\ActivityLibrary.dll
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\obj\Debug\ActivityLibrary.pdb
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\obj\Debug\AC2C1ABA-CCF6-44D4-8127-588FD4D0A860-DeferredValidationErrors.xml
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\obj\Debug\ActivityLibrary.csproj.FileListAbsolute.txt
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\obj\Debug\ActivityLibrary.csprojAssemblyReference.cache
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\obj\Debug\ActivityLibrary.csproj.CoreCompileInputs.cache
+D:\Personal\masters_research_iiit\Usability\UMETRIX\ActivityLibrary\obj\Debug\ActivityLibrary.csproj.CopyComplete

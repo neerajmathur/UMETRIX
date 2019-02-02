@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EvaluatorMVC")]
+[assembly: AssemblyTitle("UmetrixWeb")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Oracle Corporation")]
-[assembly: AssemblyProduct("EvaluatorMVC")]
+[assembly: AssemblyProduct("UmetrixWeb")]
 [assembly: AssemblyCopyright("Copyright © Oracle Corporation 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

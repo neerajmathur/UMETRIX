@@ -9,8 +9,8 @@
             <ImageBrush ImageSource="Images\mobile2.jpg"  Stretch="UniformToFill">
             </ImageBrush>
         </Grid.Background>
-        <Button Content="Execute Usability Test Case" HorizontalAlignment="Left" Margin="281,255,0,0" VerticalAlignment="Top" Width="172" Height="40" Click="Button_Click"/>
-        <Button Content="Design New Test Case" HorizontalAlignment="Left" Margin="79,255,0,0" VerticalAlignment="Top" Width="172" Height="40" Click="NewTestCase_Click"/>
+        <Button Content="Execute Usability Test Case" HorizontalAlignment="Left" Margin="179,278,0,0" VerticalAlignment="Top" Visibility="Hidden" Width="172" Height="40" Click="Button_Click"/>
+        <Button Content="Design New Test Case" HorizontalAlignment="Left" Margin="188,178,0,0" VerticalAlignment="Top" Width="172" Height="79" Click="NewTestCase_Click"/>
         <TextBlock HorizontalAlignment="Left" Foreground="DarkBlue" FontSize="20" Margin="225,46,0,0" TextWrapping="Wrap" Text="UMETRIX" VerticalAlignment="Top" Width="105" Height="26" RenderTransformOrigin="0.5,0.5">
            
         </TextBlock>

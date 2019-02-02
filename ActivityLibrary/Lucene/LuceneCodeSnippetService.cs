@@ -29,13 +29,19 @@ namespace ActivityLibrary.Lucene
             BuildIndexTask = Task.Run(() => BuildIndex());
         }
 
+        
         private static XDocument ReadCodeSnippets()
         {
             byte[] data;
             using (WebClient webClient = new WebClient())
+            {
+                // webClient.Proxy = new WebProxy("proxy.iiit.ac.in",8080);
+                 //webClient.Proxy =  new WebProxy("www-proxy-idc.in.oracle.com", 80);
                 data = webClient.DownloadData(CodeSnippetRepoUrl);
-
+            }
             string str = Encoding.GetEncoding("Windows-1252").GetString(data);
+            //string str= System.IO.File.ReadAllText(@"D:\Umetrix\Web\App_Data\UMETRIX.xml");
+
             return XDocument.Parse(str);
 
         }
